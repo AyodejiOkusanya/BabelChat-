@@ -1,0 +1,7 @@
+{
+  "name": "Babel_Chat_v1",
+  "private": true,
+  "dependencies": {
+    "@google-cloud/translate": "^2.1.3"
+  }
+}

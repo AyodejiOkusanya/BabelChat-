@@ -1,0 +1,75 @@
+<h1>BabelChat</h1>
+<br>
+<span id="chat"></span>
+<hr>
+Message:
+<br>
+<textarea id="msg" style="width:380px; height:80px"></textarea>
+<hr>
+<button id="send">Send Message</button>
+
+
+
+<script> 
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector('#send').addEventListener('click', () => {
+    msg = document.querySelector("#msg").value 
+
+    App.chat.received = function(data) {
+      const liEl = document.createElement('li')
+      liEl.innerText = data['message']
+      document.querySelector('#chat').append(liEl)
+    }
+
+    App.chat.send_msg(msg)
+  })
+})  
+
+</script>
+
+
+
+
+<%# 
+
+
+
+
+#
+
+# jquery example 
+# <script>
+#     $(document).ready(function() {
+#       $("#send").click(function() {
+#         msg = $("#msg").val()
+
+#         // Receive Message
+#         App.chat.received = function(data) {
+#           const liEl = document.createElement('li')
+#           liEl.innerText = data['message']
+#           $("#chat").append(liEl)
+#         }
+
+#         // Send Message
+#         App.chat.send_msg(msg)
+
+
+
+#       })
+#     })
+# </script>
+
+# 
+
+
+
+
+
+
+
+
+
+
+
+%>
